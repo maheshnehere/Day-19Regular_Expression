@@ -4,9 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegularExpression{
-   // Uc6 =  Rule2– Should have at least 1 Upper Case
- public static void passwordRule2(){
-    Pattern pattern = Pattern.compile("^(?=.*[A-Z])[\\w]{8,}$");
+   // Uc7 = Rule3 Should have at least 1 numeric number in the password
+ public static void passwordRule3(){
+    Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[\\d])[\\w]{8,}$");
 
     Matcher matcher = pattern.matcher("Abcd12345");
     if (matcher.find() == true) {
@@ -17,5 +17,6 @@ public class RegularExpression{
 }
  public static void main(String[] args) {
     
-     passwordRule2();
+     passwordRule3();
+ }
 }
