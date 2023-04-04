@@ -4,20 +4,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegularExpression{
-    // Uc4 = As a User need to follow pre -define Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 digit number
-  public static void phoneNumber(){
-    Pattern pattern = Pattern.compile("^[+]\\d{2} \\d{10}$");
+   // Uc5 = As a User need to follow pre defined Password rules.Rule1 minimum 8 Characters.
+  public static void password(){
+    Pattern pattern = Pattern.compile("^\\w{8,}$");
 
-    Matcher matcher = pattern.matcher("+91 7020249009");
+    Matcher matcher = pattern.matcher("sdflkjdshkewr23423lk4");
     if (matcher.find() == true) {
-        System.out.println("Phone Number is Valid");
+        System.out.println("Password is Valid");
     }else{
-        System.out.println("Phone Number is Invalid");
+        System.out.println("Password is Invalid");
     }
 }
-
 public static void main(String[] args) {
     
-    phoneNumber();
+    password();
 }
 }
