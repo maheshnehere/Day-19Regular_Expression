@@ -4,19 +4,18 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegularExpression{
-   // Uc5 = As a User need to follow pre defined Password rules.Rule1 minimum 8 Characters.
-  public static void password(){
-    Pattern pattern = Pattern.compile("^\\w{8,}$");
+   // Uc6 =  Rule2– Should have at least 1 Upper Case
+ public static void passwordRule2(){
+    Pattern pattern = Pattern.compile("^(?=.*[A-Z])[\\w]{8,}$");
 
-    Matcher matcher = pattern.matcher("sdflkjdshkewr23423lk4");
+    Matcher matcher = pattern.matcher("Abcd12345");
     if (matcher.find() == true) {
         System.out.println("Password is Valid");
     }else{
         System.out.println("Password is Invalid");
     }
 }
-public static void main(String[] args) {
+ public static void main(String[] args) {
     
-    password();
-}
+     passwordRule2();
 }
