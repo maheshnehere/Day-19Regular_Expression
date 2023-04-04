@@ -4,17 +4,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegularExpression{
-// Uc1 = As a User need to enter a valid First Name = First name starts with Cap and has minimum 3 characters
-public static void firstName() {
+   // Uc8 = Has exactly 1 Special Character
+ public static void passwordRule4(){
+    Pattern pattern = Pattern.compile("(?=.*[A-Z])(?=.*[\\d])(?=.*[!@#$%^&*])[\\w!@#$%^&*]{8,}");
 
-    Pattern pattern = Pattern.compile("^[A-Z]\\w{3,}$");
-
-    Matcher matcher = pattern.matcher("Mahesh");
-     System.out.println("First Name = "+matcher.find());
+    Matcher matcher = pattern.matcher("Abcd@12345");
+    if (matcher.find() == true) {
+        System.out.println("Password is Valid");
+    }else{
+        System.out.println("Password is Invalid");
+    }
 }
-
-public static void main(String[] args) {
-   firstName();
-}
-
+ public static void main(String[] args) {
+   
+     passwordRule4();
+ }
 }
