@@ -4,11 +4,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegularExpression{
-   // Uc7 = Rule3 Should have at least 1 numeric number in the password
- public static void passwordRule3(){
-    Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[\\d])[\\w]{8,}$");
+   // Uc8 = Has exactly 1 Special Character
+ public static void passwordRule4(){
+    Pattern pattern = Pattern.compile("(?=.*[A-Z])(?=.*[\\d])(?=.*[!@#$%^&*])[\\w!@#$%^&*]{8,}");
 
-    Matcher matcher = pattern.matcher("Abcd12345");
+    Matcher matcher = pattern.matcher("Abcd@12345");
     if (matcher.find() == true) {
         System.out.println("Password is Valid");
     }else{
@@ -16,7 +16,7 @@ public class RegularExpression{
     }
 }
  public static void main(String[] args) {
-    
-     passwordRule3();
+   
+     passwordRule4();
  }
 }
